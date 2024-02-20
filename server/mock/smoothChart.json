@@ -1,0 +1,18 @@
+{
+    "chartData":[
+        name: "医疗救助",
+        data: [113, 75, 1, 173, 134, 216, 50, 32, 173, 40, 173, 120],
+        {"time":"01/01","medicalData":113},
+        {"time":"02/01","medicalData":75},
+        {"time":"03/01","medicalData":1},
+        {"time":"04/01","medicalData":173},
+        {"time":"05/01","medicalData":134},
+        {"time":"06/01","medicalData":216},
+        {"time":"07/01","medicalData":50},
+        {"time":"08/01","num":1578},
+        {"time":"09/01","num":1578},
+        {"time":"10/01","num":1578},
+        {"time":"11/01","num":1578},
+        {"time":"12/01","num":1578}
+    ]
+}
