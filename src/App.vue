@@ -5,6 +5,8 @@
 import { provide } from "vue"
 import * as echarts from 'echarts'
 import axios from 'axios'
+// 设置请求基准路径
+axios.defaults.baseURL = "http://localhost:3000/"
 export default {
   setup() {
     provide("echarts", echarts)

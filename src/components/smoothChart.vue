@@ -36,19 +36,22 @@ export default {
         let $echarts = inject("echarts")
         let $http = inject("axios")
         let data = reactive({})
-        let xdata = reactive([])
-        let ydata = reactive([])
+        // let xdata = reactive([])
+        // let y1data = reactive([])
+        // let y2data = reactive([])
         async function getState() {
-            data = await $http({ url: "http://localhost:3000/smooth-chart/data" })
+            data = await $http({ url: "smooth-chart/data" })
         }
         // 4.创建处理数据的方法
         function setData() {
             console.log("data", data)
             // 便利数据并且去除对应的值
-            xdata = data.data.data.chartData.map(v => v.time)
-            ydata = data.data.data.chartData.map(v => v.num)
-            console.log("x", xdata)
-            console.log("y", ydata)
+            // xdata = data.data.data.chartData.map(v => v.time).map(v => v.time)
+            // y1data = data.data.data.chartData.map(v => v.num.medicalData)
+            // y2data = data.data.data.chartData.map(v => v.num.reliefData)
+            // console.log("x", xdata)
+            // console.log("y1", y1data)
+            // console.log("y2", y2data)
         }
         //3.需要获取到element,所以是onMounted 别忘了上面引用
         onMounted(() => {
@@ -97,7 +100,7 @@ export default {
                     series: [
                         {
                             name: "医疗救助",
-                            data: [113, 75, 1, 173, 134, 216, 50, 32, 173, 40, 173, 120],
+                            data: data.data.data.chartData.num.medicalData,
                             type: 'line',
                             smooth: true,
                             color: '#e76b6f',
@@ -109,7 +112,7 @@ export default {
                         },
                         {
                             name: "扶贫救灾",
-                            data: [159, 67, 148, 236, 80, 17, 217, 44, 16, 163, 225, 48],
+                            data: data.data.data.chartData.num.reliefData,
                             type: 'line',
                             smooth: true,
                             color: '#e76b6f',
@@ -142,7 +145,7 @@ export default {
                             length: 10,
                             show: false
                         },
-                        data: ['01/01', '02/01', '03/01', '04/01', '05/01', '06/01', '07/01', '08/01', '09/01', '10/01', '11/01', '12/01'],
+                        data: data.data.data.chartData.time,
                         axisLabel: {
                             interval: 2,
                             fontSize: 12,
@@ -157,7 +160,7 @@ export default {
                     series: [
                         {
                             name: "医疗救助",
-                            data: [113, 75, 1, 173, 134, 216, 50, 32, 173, 40, 173, 120],
+                            data: data.data.data.chartData.num.medicalData,
                             type: 'line',
                             smooth: true,
                             color: '#e76b6f',
@@ -169,7 +172,7 @@ export default {
                         },
                         {
                             name: "扶贫救灾",
-                            data: [159, 67, 148, 236, 80, 17, 217, 44, 16, 163, 225, 48],
+                            data: data.data.data.chartData.num.reliefData,
                             type: 'line',
                             smooth: true,
                             color: '#e76b6f',
@@ -202,7 +205,7 @@ export default {
                             length: 10,
                             show: false
                         },
-                        data: ['01/01', '02/01', '03/01', '04/01', '05/01', '06/01', '07/01', '08/01', '09/01', '10/01', '11/01', '12/01'],
+                        data: data.data.data.chartData.time,
                         axisLabel: {
                             interval: 2,
                             fontSize: 12,
@@ -213,12 +216,11 @@ export default {
                     yAxis: {
                         splitLine: false,
                         show: false,
-
                     },
                     series: [
                         {
                             name: "医疗救助",
-                            data: [113, 75, 1, 173, 134, 216, 50, 32, 173, 40, 173, 120],
+                            data: data.data.data.chartData.num.medicalData,
                             type: 'line',
                             smooth: true,
                             color: '#e76b6f',
@@ -230,7 +232,7 @@ export default {
                         },
                         {
                             name: "扶贫救灾",
-                            data: [159, 67, 148, 236, 80, 17, 217, 44, 16, 163, 225, 48],
+                            data: data.data.data.chartData.num.reliefData,
                             type: 'line',
                             smooth: true,
                             color: '#e76b6f',
@@ -263,7 +265,7 @@ export default {
                             length: 10,
                             show: false
                         },
-                        data: ['01/01', '02/01', '03/01', '04/01', '05/01', '06/01', '07/01', '08/01', '09/01', '10/01', '11/01', '12/01'],
+                        data: data.data.data.chartData.time,
                         axisLabel: {
                             interval: 2,
                             fontSize: 12,
@@ -278,7 +280,7 @@ export default {
                     series: [
                         {
                             name: "医疗救助",
-                            data: [113, 75, 1, 173, 134, 216, 50, 32, 173, 40, 173, 120],
+                            data: data.data.data.chartData.num.medicalData,
                             type: 'line',
                             smooth: true,
                             color: '#e76b6f',
@@ -290,7 +292,7 @@ export default {
                         },
                         {
                             name: "扶贫救灾",
-                            data: [159, 67, 148, 236, 80, 17, 217, 44, 16, 163, 225, 48],
+                            data: data.data.data.chartData.num.reliefData,
                             type: 'line',
                             smooth: true,
                             color: '#e76b6f',
@@ -302,6 +304,7 @@ export default {
                         }
                     ]
                 })
+
             })
             myChart1.clear()
             myChart2.clear()
@@ -316,7 +319,7 @@ export default {
             };
         })
         return {
-            getState, data, xdata, ydata, setData
+            getState, data, setData
         }
     }
 
