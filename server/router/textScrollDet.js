@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-let data = require("../mock/textScrollDet.json");
+let data = require("../mock/screen1/textScrollDet.json");
 router.get("/data", function (req, res) {
   res.send({ msg: "详细滚动列表接口", data });
 });

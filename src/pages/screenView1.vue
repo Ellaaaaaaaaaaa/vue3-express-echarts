@@ -83,13 +83,13 @@
 </template>
 
 <script>
-import smoothChart from '@/components/smoothChart.vue';
-import detailSmoChart from '@/components/detailSmoChart.vue';
-import pieChart from '@/components/pieChart.vue'
-import barChart from '@/components/barChart.vue'
-import barChartRot from '@/components/barChartRot.vue'
-import textScroll from '@/components/textScroll.vue'
-import textScrollDet from '@/components/textScrollDet.vue'
+import smoothChart from '@/components/screen1/smoothChart.vue';
+import detailSmoChart from '@/components/screen1/detailSmoChart.vue';
+import pieChart from '@/components/screen1/pieChart.vue'
+import barChart from '@/components/screen1/barChart.vue'
+import barChartRot from '@/components/screen1/barChartRot.vue'
+import textScroll from '@/components/screen1/textScroll.vue'
+import textScrollDet from '@/components/screen1/textScrollDet.vue'
 import { inject } from "vue"
 export default {
     components: {

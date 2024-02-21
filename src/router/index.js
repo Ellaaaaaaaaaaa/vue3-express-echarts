@@ -1,17 +1,23 @@
 import { createRouter, createWebHistory } from "vue-router";
-import ScreenView from "@/pages/screenView";
+import ScreenView1 from "@/pages/screenView1";
+import ScreenView2 from "@/pages/screenView2";
 import HomeView from "@/pages/homeView";
 
 const routes = [
   {
-    path: "/screenview",
-    name: "ScreenView",
-    component: ScreenView,
-  },
-  {
     path: "/",
     name: "homeView",
     component: HomeView,
+  },
+  {
+    path: "/screenview1",
+    name: "ScreenView1",
+    component: ScreenView1,
+  },
+  {
+    path: "/screenview2",
+    name: "ScreenView2",
+    component: ScreenView2,
   },
 ];
 
