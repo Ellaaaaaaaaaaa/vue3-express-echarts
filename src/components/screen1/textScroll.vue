@@ -14,7 +14,7 @@ export default {
         let $http = inject("axios")
         var timer;
         async function getState() {
-            data = await $http({ url: "text-scroll/data" })
+            data = await $http({ url: "text-scroll-Det/data" })
         }
         let data = reactive({})
         function setData() {

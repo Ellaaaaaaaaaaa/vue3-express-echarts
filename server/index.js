@@ -19,15 +19,15 @@ var detailSmoChart = require("./router/detailSmoChart.js");
 var pieChart = require("./router/pieChart.js");
 var barChart = require("./router/barChart.js");
 var barChartRot = require("./router/barChartRot.js");
-var textScroll = require("./router/textScroll.js");
 var textScrollDet = require("./router/textScrollDet.js");
+var text = require("./router/text.js");
 // 中间件中使用路由
 app.use("/smooth-chart", smoothChart);
 app.use("/detail-smo-chart", detailSmoChart);
 app.use("/pie-chart", pieChart);
 app.use("/bar-chart", barChart);
 app.use("/bar-chart-rot", barChartRot);
-app.use("/text-scroll", textScroll);
 app.use("/text-scroll-det", textScrollDet);
+app.use("/text", text);
 // 请求是localhost:3000/user/路由文件中的地址
 app.listen(3000);
