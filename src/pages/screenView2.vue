@@ -34,7 +34,9 @@
                 <div class="combox" style="width: 10%;">data</div>
             </div>
 
-            <div class="combox">bottom</div>
+            <div>
+                <bottomChart></bottomChart>
+            </div>
         </div>
 
     </div>
@@ -43,11 +45,13 @@
 <script>
 import { inject } from "vue"
 import leftChart from "@/components/screen2/leftChart.vue"
+import bottomChart from "@/components/screen2/bottomChart.vue"
 import mapChart from "@/components/screen2/mapChart.vue"
 export default {
     components: {
         leftChart,
-        mapChart
+        mapChart,
+        bottomChart
     },
     data() {
         return {
