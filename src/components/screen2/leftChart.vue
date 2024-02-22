@@ -16,7 +16,7 @@
         </div>
 
         <div style="display: flex;">
-            <div id="chart15" style="height: 220px;width: 300px;"></div>
+            <div id="chart15" style="height: 220px;width: 350px;"></div>
             <div id="chart16" style="height: 220px;width: 300px;"></div>
         </div>
     </div>
@@ -220,12 +220,15 @@ export default {
                         axisLine: {
                             show: false
                         },
+                        axisLabel: {
+                            color: 'white'
+                        },
                         splitLine: false,
                     },
                     grid: {
                         x: 30,
                         y: 25,
-                        x2: 50,
+                        x2: 15,
                         y2: 30
                     },
                     tooltip: {
@@ -239,12 +242,8 @@ export default {
                     series: [
                         {
                             type: 'bar',
-                            showBackground: true,
-                            backgroundStyle: {
-                                color: 'rgba(180, 180, 180, 0.2)',
-                                borderRadius: [10, 10, 10, 10]
-                            },
-                            barWidth: 12,
+                            barWidth: 10,
+                            barGap: 0.3,
                             itemStyle: {
                                 color: "#8eeede",
                                 barBorderRadius: [10, 10, 10, 10]
@@ -254,12 +253,8 @@ export default {
                         },
                         {
                             type: 'bar',
-                            showBackground: true,
-                            backgroundStyle: {
-                                color: 'rgba(180, 180, 180, 0.2)',
-                                borderRadius: [10, 10, 10, 10]
-                            },
                             barWidth: 10,
+                            barGap: 0.3,
                             itemStyle: {
                                 color: "#0989b3",
                                 barBorderRadius: [10, 10, 10, 10]

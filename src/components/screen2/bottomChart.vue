@@ -4,7 +4,7 @@
             <div style="color: #FFFFFFE6;font-size: 18px;line-height: 35px;">自定义标题</div>
             <div style="color: #FFFFFF4D;font-size: 12px;line-height: 20px;">custom tittle</div>
             <div class="title-text">累计帮助贫困儿童</div>
-            <span style="font-size: 30px;font-weight: bold;line-height:4px">232,425</span>
+            <span style="font-size: 25px;font-weight: bold;line-height:4px">232,425</span>
             <span style="font-size: 16px;color: #FFFFFFE6;">人</span>
             <div id="chart17" class="smooth-chart"></div>
         </div>
@@ -13,7 +13,7 @@
             <div style="color: #FFFFFFE6;font-size: 18px;line-height: 35px;">自定义标题</div>
             <div style="color: #FFFFFF4D;font-size: 12px;line-height: 20px;">custom tittle</div>
             <div class="title-text">医疗救助</div>
-            <span style="font-size: 30px;font-weight: bold;line-height:4px">225,511</span>
+            <span style="font-size: 25px;font-weight: bold;line-height:4px">225,511</span>
             <span style="font-size: 16px;color: #FFFFFFE6;">人</span>
             <div id="chart18" class="smooth-chart"></div>
         </div>
@@ -23,7 +23,7 @@
             <div style="color: #FFFFFF4D;font-size: 12px;line-height: 20px;">custom tittle</div>
 
             <div class="title-text">累计帮助贫困儿童</div>
-            <span style="font-size: 30px;font-weight: bold;line-height:4px">232,425</span>
+            <span style="font-size: 25px;font-weight: bold;line-height:4px">232,425</span>
             <span style="font-size: 16px;color: #FFFFFFE6;">人</span>
             <div id="chart19" class="smooth-chart"></div>
         </div>
@@ -34,7 +34,7 @@
             <div style="color: #FFFFFF4D;font-size: 12px;line-height: 20px;">custom tittle</div>
 
             <div class="title-text">扶贫救灾</div>
-            <span style="font-size: 30px;font-weight: bold;line-height:4px">228,512</span>
+            <span style="font-size: 25px;font-weight: bold;line-height:4px">228,512</span>
             <span style="font-size: 16px;color: #FFFFFFE6;">人</span>
             <div id="chart20" class="smooth-chart"></div>
         </div>
@@ -91,7 +91,7 @@ export default {
                     },
                     grid: {
                         top: 10,
-                        left: 15,
+                        left: 10,
                         right: 10,
                         bottom: 20,
                     },
@@ -151,7 +151,7 @@ export default {
                     },
                     grid: {
                         top: 10,
-                        left: 15,
+                        left: 10,
                         right: 10,
                         bottom: 20,
                     },
@@ -211,7 +211,7 @@ export default {
                     },
                     grid: {
                         top: 10,
-                        left: 15,
+                        left: 10,
                         right: 10,
                         bottom: 20,
                     },
@@ -271,7 +271,7 @@ export default {
                     },
                     grid: {
                         top: 10,
-                        left: 15,
+                        left: 10,
                         right: 10,
                         bottom: 20,
 
@@ -346,28 +346,24 @@ export default {
 }
 
 .smooth-chart {
-    width: 220px;
-    height: 70px;
+    width: 190px;
+    height: 55px;
 }
 
 .basic-compbox {
     font-family: "Microsoft Yahei";
     background-color: #04273A;
-    height: 190px;
-    width: 220px;
+    height: 170px;
+    width: 190px;
     color: aqua;
     margin-top: 0px;
+    padding-left: 10px;
     text-align: left;
 }
 
 .title-text {
-    font-size: 15px;
-    margin-bottom: 16px;
+    font-size: 13px;
+    margin-bottom: 10px;
     color: rgb(210, 209, 209);
-}
-
-.line {
-    height: 2px;
-    background-color: #0B3B51;
 }
 </style>
