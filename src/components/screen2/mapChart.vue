@@ -1,11 +1,15 @@
 <template>
     <div class="outerbox">
-        <div id="mapChart" style="height: 500px;width:500px"></div>
+        <div class="mapBG">
+            <div id="mapChart" style="height: 700px;width:680px;"></div>
+        </div>
+
     </div>
 </template>
 
 <script >
 import { inject, onMounted, reactive } from "vue"
+import chinaMap from "@/utils/china.json";
 // 引入 Canvas 渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步
 export default {
     setup() {
@@ -27,7 +31,7 @@ export default {
 
             // 5.绘制图表
             myChart1.clear()
-
+            $echarts.registerMap("china", chinaMap)
             getState().then(() => {
                 setData()
                 myChart1.setOption({
@@ -37,14 +41,14 @@ export default {
                     },
                     geo: {
                         map: "china",
-                        roam: false,// 一定要关闭拖拽
-                        zoom: 1.23,
+                        roam: true,// 拖拽
+                        zoom: 1.2,
                         center: [105, 36], // 调整地图位置
                         label: {
                             normal: {
-                                show: false, //关闭省份名展示
-                                fontSize: "10",
-                                color: "rgba(0,0,0,0.7)"
+                                show: true, //省份名展示
+                                fontSize: "11",
+                                color: "rgb(251, 251, 251, 1)"
                             },
                             emphasis: {
                                 show: false
@@ -52,7 +56,7 @@ export default {
                         },
                         itemStyle: {
                             normal: {
-                                areaColor: "#0d0059",
+                                areaColor: "#0e435fa1",
                                 borderColor: "#389dff",
                                 borderWidth: 1, //设置外层边框
                                 shadowBlur: 5,
@@ -61,7 +65,7 @@ export default {
                                 shadowColor: "#01012a"
                             },
                             emphasis: {
-                                areaColor: "#184cff",
+                                areaColor: "#79CDCD",
                                 shadowOffsetX: 0,
                                 shadowOffsetY: 0,
                                 shadowBlur: 5,
@@ -70,44 +74,7 @@ export default {
                             }
                         }
                     },
-                    series: [
-                        {
-                            type: "map",
-                            map: "china",
-                            roam: false,
-                            zoom: 1.23,
-                            center: [105, 36],
-                            // geoIndex: 1,
-                            // aspectScale: 0.75, //长宽比
-                            showLegendSymbol: false, // 存在legend时显示
-                            label: {
-                                normal: {
-                                    show: false
-                                },
-                                emphasis: {
-                                    show: false,
-                                    textStyle: {
-                                        color: "#fff"
-                                    }
-                                }
-                            },
-                            itemStyle: {
-                                normal: {
-                                    areaColor: "#0d0059",
-                                    borderColor: "#389dff",
-                                    borderWidth: 0.5
-                                },
-                                emphasis: {
-                                    areaColor: "#17008d",
-                                    shadowOffsetX: 0,
-                                    shadowOffsetY: 0,
-                                    shadowBlur: 5,
-                                    borderWidth: 0,
-                                    shadowColor: "rgba(0, 0, 0, 0.5)"
-                                }
-                            }
-                        }
-                    ]
+
                 })
 
             })
@@ -121,4 +88,22 @@ export default {
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+//格子背景效果
+.mapBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(0deg,
+            rgba(188, 224, 228, 0.219) 1px,
+            transparent 1px,
+        ), linear-gradient(90deg,
+            rgba(188, 224, 228, 0.219) 1px,
+            transparent 1px,
+        );
+    background-size: 50px 50px;
+    z-index: -1;
+}
+</style>
