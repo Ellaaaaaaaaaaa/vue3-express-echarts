@@ -17,7 +17,7 @@
                     <span class="tittle-time">{{ time }}</span>
                 </div>
             </div>
-            <div style="height: 700px;display: flex;margin: 15px 20px 20px 20px;gap:10px">
+            <div style="height: 700px;display: flex;margin: 15px 20px 10px 20px;gap:10px">
                 <div class="combox" style="width: 40%;">
                     <div style="margin: 30px 30px 10px 30px;">
                         <div class="line"></div>
@@ -34,7 +34,7 @@
                 <div class="combox" style="width: 10%;">data</div>
             </div>
 
-            <div>
+            <div style="margin: 15px 20px 10px 20px;height: 200px;">
                 <bottomChart></bottomChart>
             </div>
         </div>

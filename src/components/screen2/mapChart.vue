@@ -103,7 +103,7 @@ export default {
             rgba(188, 224, 228, 0.219) 1px,
             transparent 1px,
         );
-    background-size: 50px 50px;
+    background-size: 30px 30px;
     z-index: -1;
 }
 </style>

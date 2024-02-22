@@ -21,6 +21,7 @@ var barChart = require("./router/barChart.js");
 var barChartRot = require("./router/barChartRot.js");
 var textScrollDet = require("./router/textScrollDet.js");
 var text = require("./router/text.js");
+var radar = require("./router/radar.js");
 // 中间件中使用路由
 app.use("/smooth-chart", smoothChart);
 app.use("/detail-smo-chart", detailSmoChart);
@@ -29,5 +30,6 @@ app.use("/bar-chart", barChart);
 app.use("/bar-chart-rot", barChartRot);
 app.use("/text-scroll-det", textScrollDet);
 app.use("/text", text);
+app.use("/radar", radar);
 // 请求是localhost:3000/user/路由文件中的地址
 app.listen(3000);

@@ -1,46 +1,41 @@
 <template>
     <div class="outerbox">
         <div class="basic-compbox">
-            <div class="line"></div>
             <div style="color: #FFFFFFE6;font-size: 18px;line-height: 35px;">自定义标题</div>
             <div style="color: #FFFFFF4D;font-size: 12px;line-height: 20px;">custom tittle</div>
-            <div class="line"></div>
             <div class="title-text">累计帮助贫困儿童</div>
-            <span style="font-size: 40px;font-weight: bold;line-height:42px">232,425</span>
-            <span style="font-size: 16px;">人</span>
+            <span style="font-size: 30px;font-weight: bold;line-height:4px">232,425</span>
+            <span style="font-size: 16px;color: #FFFFFFE6;">人</span>
             <div id="chart17" class="smooth-chart"></div>
         </div>
 
         <div class="basic-compbox">
-            <div class="line"></div>
             <div style="color: #FFFFFFE6;font-size: 18px;line-height: 35px;">自定义标题</div>
             <div style="color: #FFFFFF4D;font-size: 12px;line-height: 20px;">custom tittle</div>
-            <div class="line"></div>
             <div class="title-text">医疗救助</div>
-            <span style="font-size: 40px;font-weight: bold;line-height:42px">225,511</span>
-            <span style="font-size: 16px;">人</span>
+            <span style="font-size: 30px;font-weight: bold;line-height:4px">225,511</span>
+            <span style="font-size: 16px;color: #FFFFFFE6;">人</span>
             <div id="chart18" class="smooth-chart"></div>
         </div>
 
         <div class="basic-compbox">
-            <div class="line"></div>
             <div style="color: #FFFFFFE6;font-size: 18px;line-height: 35px;">自定义标题</div>
             <div style="color: #FFFFFF4D;font-size: 12px;line-height: 20px;">custom tittle</div>
-            <div class="line"></div>
+
             <div class="title-text">累计帮助贫困儿童</div>
-            <span style="font-size: 40px;font-weight: bold;line-height:42px">232,425</span>
-            <span style="font-size: 16px;">人</span>
+            <span style="font-size: 30px;font-weight: bold;line-height:4px">232,425</span>
+            <span style="font-size: 16px;color: #FFFFFFE6;">人</span>
             <div id="chart19" class="smooth-chart"></div>
         </div>
 
         <div class="basic-compbox">
-            <div class="line"></div>
+
             <div style="color: #FFFFFFE6;font-size: 18px;line-height: 35px;">自定义标题</div>
             <div style="color: #FFFFFF4D;font-size: 12px;line-height: 20px;">custom tittle</div>
-            <div class="line"></div>
+
             <div class="title-text">扶贫救灾</div>
-            <span style="font-size: 40px;font-weight: bold;line-height:42px">228,512</span>
-            <span style="font-size: 16px;">人</span>
+            <span style="font-size: 30px;font-weight: bold;line-height:4px">228,512</span>
+            <span style="font-size: 16px;color: #FFFFFFE6;">人</span>
             <div id="chart20" class="smooth-chart"></div>
         </div>
 
@@ -95,10 +90,10 @@ export default {
                         }
                     },
                     grid: {
-                        x: 10,
-                        y: 30,
-                        x2: 10,
-                        y2: 35
+                        top: 10,
+                        left: 15,
+                        right: 10,
+                        bottom: 20,
                     },
                     xAxis: {
                         axisTick: {
@@ -122,11 +117,11 @@ export default {
                             name: "医疗救助",
                             data: data.data.data.chartData.num.medicalData,
                             type: 'line',
-                            smooth: true,
-                            color: '#e76b6f',
+
+                            color: '#0989b3',
                             showSymbol: false,
                             areaStyle: {
-                                color: '#BA55D3',
+                                color: '#96CDCD',
                                 opacity: 0.4
                             }
                         },
@@ -134,8 +129,8 @@ export default {
                             name: "扶贫救灾",
                             data: data.data.data.chartData.num.reliefData,
                             type: 'line',
-                            smooth: true,
-                            color: '#e76b6f',
+
+                            color: '#0989b3',
                             showSymbol: false,
                             areaStyle: {
                                 color: 'rgb(29, 34, 60)',
@@ -155,10 +150,10 @@ export default {
                         }
                     },
                     grid: {
-                        x: 10,
-                        y: 30,
-                        x2: 10,
-                        y2: 35
+                        top: 10,
+                        left: 15,
+                        right: 10,
+                        bottom: 20,
                     },
                     xAxis: {
                         axisTick: {
@@ -182,11 +177,11 @@ export default {
                             name: "医疗救助",
                             data: data.data.data.chartData.num.medicalData,
                             type: 'line',
-                            smooth: true,
-                            color: '#e76b6f',
+
+                            color: '#0989b3',
                             showSymbol: false,
                             areaStyle: {
-                                color: '#BA55D3',
+                                color: '#96CDCD',
                                 opacity: 0.4
                             }
                         },
@@ -194,8 +189,8 @@ export default {
                             name: "扶贫救灾",
                             data: data.data.data.chartData.num.reliefData,
                             type: 'line',
-                            smooth: true,
-                            color: '#e76b6f',
+
+                            color: '#0989b3',
                             showSymbol: false,
                             areaStyle: {
                                 color: 'rgb(29, 34, 60)',
@@ -215,10 +210,10 @@ export default {
                         }
                     },
                     grid: {
-                        x: 10,
-                        y: 30,
-                        x2: 10,
-                        y2: 35
+                        top: 10,
+                        left: 15,
+                        right: 10,
+                        bottom: 20,
                     },
                     xAxis: {
                         axisTick: {
@@ -242,11 +237,11 @@ export default {
                             name: "医疗救助",
                             data: data.data.data.chartData.num.medicalData,
                             type: 'line',
-                            smooth: true,
-                            color: '#e76b6f',
+
+                            color: '#0989b3',
                             showSymbol: false,
                             areaStyle: {
-                                color: '#BA55D3',
+                                color: '#96CDCD',
                                 opacity: 0.4
                             }
                         },
@@ -254,8 +249,8 @@ export default {
                             name: "扶贫救灾",
                             data: data.data.data.chartData.num.reliefData,
                             type: 'line',
-                            smooth: true,
-                            color: '#e76b6f',
+
+                            color: '#0989b3',
                             showSymbol: false,
                             areaStyle: {
                                 color: 'rgb(29, 34, 60)',
@@ -275,10 +270,11 @@ export default {
                         }
                     },
                     grid: {
-                        x: 10,
-                        y: 30,
-                        x2: 10,
-                        y2: 35
+                        top: 10,
+                        left: 15,
+                        right: 10,
+                        bottom: 20,
+
                     },
                     xAxis: {
                         axisTick: {
@@ -302,11 +298,11 @@ export default {
                             name: "医疗救助",
                             data: data.data.data.chartData.num.medicalData,
                             type: 'line',
-                            smooth: true,
-                            color: '#e76b6f',
+
+                            color: '#0989b3',
                             showSymbol: false,
                             areaStyle: {
-                                color: '#BA55D3',
+                                color: '#96CDCD',
                                 opacity: 0.4
                             }
                         },
@@ -314,8 +310,8 @@ export default {
                             name: "扶贫救灾",
                             data: data.data.data.chartData.num.reliefData,
                             type: 'line',
-                            smooth: true,
-                            color: '#e76b6f',
+
+                            color: '#0989b3',
                             showSymbol: false,
                             areaStyle: {
                                 color: 'rgb(29, 34, 60)',
@@ -326,10 +322,6 @@ export default {
                 })
 
             })
-            myChart1.clear()
-            myChart2.clear()
-            myChart3.clear()
-            myChart4.clear()
 
             window.onresize = function () {//自适应大小
                 myChart1.resize();
@@ -348,27 +340,29 @@ export default {
 
 <style lang="less" scoped>
 .outerbox {
+    height: 100px;
     display: flex;
-    padding-left: 8px;
+    gap: 10px;
 }
 
 .smooth-chart {
-    width: 180px;
-    height: 50px;
+    width: 220px;
+    height: 70px;
 }
 
 .basic-compbox {
     font-family: "Microsoft Yahei";
     background-color: #04273A;
-    height: 150px;
-    width: 250px;
-    margin-top: 28px;
+    height: 190px;
+    width: 220px;
+    color: aqua;
+    margin-top: 0px;
     text-align: left;
 }
 
 .title-text {
-    font-size: 17px;
-    margin-bottom: 18px;
+    font-size: 15px;
+    margin-bottom: 16px;
     color: rgb(210, 209, 209);
 }
 

@@ -112,7 +112,7 @@ export default {
                                 },
                                 barBorderRadius: [10, 10, 10, 10]
                             },
-                            data: data.data.data.chartData.value,
+                            data: data.data.data.chartData.value1,
                             name: '危险'
                         }
                     ],
