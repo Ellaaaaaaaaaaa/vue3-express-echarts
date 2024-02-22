@@ -4,10 +4,15 @@
             <div class="pie-wrapper" v-for="(item, index) in list" :key="index">
                 <div class="pie-chart" style="height:100px;width:100px;margin-top:40px;"></div>
             </div>
-            <div id="chart13" style="height:180px;width:300px;"></div>
+            <div id="chart13" style="height:180px;width:300px;">
+            </div>
+
         </div>
         <div class="text">
-            <div id="chart14" style="height: 200px;width: 500px;"></div>
+            <div style="height: 200px;width: 500px;overflow: auto;">
+                <tableChart></tableChart>
+            </div>
+
         </div>
 
         <div>
@@ -19,9 +24,12 @@
 
 <script>
 import { inject, onMounted, reactive } from "vue"
-
+import tableChart from './tableChart.vue';
 // 引入 Canvas 渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步
 export default {
+    components: {
+        tableChart,
+    },
     data() {
         return {
             list: [{ id: 1 }, { id: 2 }]
@@ -34,9 +42,6 @@ export default {
         let $http = inject("axios")
         let data1 = reactive({})
         let data2 = reactive({})
-        // let xdata = reactive([])
-        // let y1data = reactive([])
-        // let y2data = reactive([])
         async function getState() {
             data1 = await $http({ url: "bar-chart/data" })
             data2 = await $http({ url: "text/data" })
@@ -50,7 +55,6 @@ export default {
             // 4.初始化echarts 别忘了给上面echarts容器添加id
             let myCharts = document.getElementsByClassName("pie-chart");
             let myChart2 = $echarts.init(document.getElementById("chart13"));
-            let myChart3 = $echarts.init(document.getElementById("chart14"));
             let myChart4 = $echarts.init(document.getElementById("chart15"));
             let myChart5 = $echarts.init(document.getElementById("chart16"));
 
@@ -184,223 +188,6 @@ export default {
                     ],
                 })
 
-                myChart3.setOption({
-                    grid: {
-                        left: "99.99%",
-                        top: "5%",
-                        right: "0%",
-                        bottom: "5%",
-                    },
-                    xAxis: {
-                        type: 'value',
-                        position: 'top',
-                        axisLabel: {
-                            show: false
-                        },
-
-                        splitLine: {
-                            show: false,
-
-                        },
-                    },
-                    yAxis: [
-                        {
-                            type: 'category',
-                            inverse: true,
-                            position: 'left',
-                            offset: 470,
-
-                            axisLine: {
-                                show: false,//隐藏y轴轴线
-                                lineStyle: {
-                                    color: "#ffffff",
-                                    width: 0,
-
-                                },
-                            },
-                            axisTick: {
-                                show: false, //隐藏y轴刻度
-                            },
-                            axisLabel: {
-                                align: 'center',
-                                padding: [0, 0, 2, 0],
-                                width: 40,
-                                height: 42,
-                                inside: true,
-                                color: '#7AC5CD',
-                                textStyle: {
-                                    fontSize: 16,
-
-                                    interval: 0,
-                                },
-                            },
-                            data: data2.data.data.chartData.name
-                        },
-                        {
-                            type: 'category',
-                            inverse: true,
-                            position: 'left',
-                            offset: 365,
-
-                            axisLine: {
-                                show: false,//隐藏y轴轴线
-                                lineStyle: {
-                                    color: "#ffffff",
-                                    width: 0,
-
-                                },
-                            },
-                            axisTick: {
-                                show: false, //隐藏y轴刻度
-
-                            },
-                            axisLabel: {
-                                align: 'center',
-                                padding: [0, 0, 2, 0],
-                                width: 130,
-                                height: 42,
-                                overflow: "break",
-                                inside: true,
-                                color: '#7AC5CD',
-                                textStyle: {
-                                    fontSize: 16,
-
-                                    interval: 0,
-                                },
-                            },
-                            data: data2.data.data.chartData.IDnumber
-                        },
-                        {
-                            type: 'category',
-                            inverse: true,
-                            position: 'left',
-                            offset: 235,
-
-                            axisLine: {
-                                show: false,//隐藏y轴轴线
-                                lineStyle: {
-                                    color: "#ffffff",
-                                    width: 0,
-
-                                },
-                            },
-                            axisTick: {
-                                show: false, //隐藏y轴刻度
-                            },
-                            axisLabel: {
-                                align: 'center',
-                                padding: [0, 0, 2, 0],
-                                width: 50,
-                                height: 42,
-                                color: "#7AC5CD",
-                                inside: true,
-                                textStyle: {
-                                    fontSize: 16,
-
-                                    interval: 0,
-                                },
-                            },
-                            data: data2.data.data.chartData.location
-                        },
-                        {
-                            type: 'category',
-                            inverse: true,
-                            position: 'left',
-                            offset: 150,
-
-                            axisLine: {
-                                show: false,//隐藏y轴轴线
-                                lineStyle: {
-                                    color: "#ffffff",
-                                    width: 0,
-
-                                },
-                            },
-                            axisTick: {
-                                show: false, //隐藏y轴刻度
-                            },
-                            axisLabel: {
-                                align: 'center',
-                                padding: [0, 0, 2, 0],
-                                width: 50,
-                                height: 42,
-                                color: "#7AC5CD",
-                                inside: true,
-                                textStyle: {
-                                    fontSize: 16,
-
-                                    interval: 0,
-                                },
-                            },
-                            data: data2.data.data.chartData.place
-                        },
-                        {
-                            type: 'category',
-                            inverse: true,
-                            position: 'left',
-                            offset: 60,
-
-                            axisLine: {
-                                show: false,//隐藏y轴轴线
-                                lineStyle: {
-                                    color: "#ffffff",
-                                    width: 0,
-
-                                },
-                            },
-                            axisTick: {
-                                show: false, //隐藏y轴刻度
-
-                            },
-                            axisLabel: {
-                                align: 'center',
-                                padding: [0, 0, 2, 0],
-                                width: 130,
-                                height: 42,
-                                overflow: "break",
-                                inside: true,
-                                color: '#7AC5CD',
-                                textStyle: {
-                                    fontSize: 16,
-
-                                    interval: 0,
-                                },
-                            },
-                            data: data2.data.data.chartData.time
-                        },
-                    ],
-                    dataZoom: [{
-                        filterMode: "none",
-                        show: true,
-                        type: "slider",
-                        startValue: 0,
-                        endValue: 4,
-                        width: '5',
-                        showDetail: false,
-                        yAxisIndex: [0, 1, 2, 3, 4],
-                        height: "90%",
-                        fillerColor: "#8aafb3", // 滚动条颜色
-                        borderColor: "rgb(255,255,255,0)",
-                        backgroundColor: 'rgb(255,255,255,0)',//两边未选中的滑动条区域的颜色
-                        showDataShadow: false,//是否显示数据阴影 默认auto
-                        top: '1%',
-                        zoomLock: true,
-                        brushSelect: false,
-                        right: 0,
-                        borderRadius: 5
-                    },
-                    {
-                        type: 'inside',
-                        startValue: 0,
-                        endValue: 4,
-                        yAxisIndex: [0, 1, 2, 3, 4],
-                        zoomOnMouseWheel: false,  //滚轮是否触发缩放
-                        moveOnMouseMove: true,  //鼠标滚轮触发滚动
-                        moveOnMouseWheel: true
-                    }
-                    ]
-                })
-
                 myChart4.setOption({
 
                 })
@@ -410,7 +197,6 @@ export default {
             })
             window.onresize = function () {//自适应大小
                 myChart2.resize();
-                myChart3.resize();
                 myChart4.resize();
                 myChart5.resize();
             };
