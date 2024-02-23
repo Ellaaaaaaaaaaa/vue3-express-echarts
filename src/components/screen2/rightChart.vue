@@ -52,7 +52,7 @@ export default {
 
 <style lang="less" scoped>
 .title {
-    width: 115px;
+    width: 85%;
     height: 25px;
     margin: 10px 10px 0 10px;
     text-align: center;
@@ -62,7 +62,7 @@ export default {
 }
 
 .content {
-    width: 115px;
+    width: 85%;
     height: 50px;
     display: flex;
     background-color: #033f7c59;

@@ -16,8 +16,13 @@
         </div>
 
         <div style="display: flex;">
-            <div id="chart15" style="height: 220px;width: 350px;"></div>
-            <div id="chart16" style="height: 220px;width: 300px;"></div>
+            <div style="width: 58.3%;">
+                <div id="chart15" style="height: 220px;width: 100%;"></div>
+            </div>
+            <div style="width: 58.3%;">
+                <div id="chart16" style="height: 220px;width: 100%;"></div>
+            </div>
+
         </div>
     </div>
 </template>

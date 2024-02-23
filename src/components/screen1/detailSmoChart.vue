@@ -1,5 +1,5 @@
 <template>
-    <div class="outerbox">
+    <div class="outerbox" style="height:330px">
         <div class="title-text">
             <span style="margin: 20px 0 0 20px;height:30px;width: 28px;">126,415,026</span>
             <div style="margin: 15px 0 0 435px;line-height:30px;width: 36px;">同比</div>
@@ -116,7 +116,7 @@ export default {
 
 <style lang="less" scoped>
 .det-chart2 {
-    width: 700px;
+    width: 100%;
     height: 280px;
 }
 

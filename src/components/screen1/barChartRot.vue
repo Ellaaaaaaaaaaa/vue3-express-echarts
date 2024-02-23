@@ -129,7 +129,7 @@ export default {
 
 <style lang="less" scoped>
 .pie-rot-chart {
-    width: 360px;
+    width: 100%;
     height: 300px;
 }
 

@@ -1,7 +1,7 @@
 <template>
     <div class="outerbox">
         <div class="mapBG">
-            <div id="mapChart" style="height: 700px;width:680px;"></div>
+            <div id="mapChart" style="height: 700px;width:100%;"></div>
         </div>
 
     </div>

@@ -34,7 +34,7 @@
                         <div class="combox-tittle">
                             <div class="tittle-diy">自定义标题</div>
                         </div>
-                        <div class="combox-content">
+                        <div class="combox-content" style="width:100%">
                             <pieChart></pieChart>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="combox-tittle">
                             <div class="tittle-diy">自定义标题</div>
                         </div>
-                        <div class="combox-content">
+                        <div class="combox-content" style="width:100%">
                             <barChart></barChart>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                         <div class="combox-tittle">
                             <div class="tittle-diy">自定义标题</div>
                         </div>
-                        <div class="combox-content">
+                        <div class="combox-content" style="width:100%">
                             <textScroll></textScroll>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                         <div class="combox-tittle">
                             <div class="tittle-diy">自定义标题</div>
                         </div>
-                        <div class="combox-content" style="border-radius: 0px 0px 40px 0px;">
+                        <div class="combox-content" style="border-radius: 0px 0px 40px 0px;width:100%">
                             <textScrollDet></textScrollDet>
                         </div>
                     </div>

@@ -40,12 +40,16 @@
         </div>
         <div class="basic-compbox" style="width: 40%;">
             <div style="display: flex;gap: 5px;">
-                <div>
-                    <div id="chart21" style="width: 300px;height: 80px;"></div>
-                    <div id="chart22" style="width: 300px;height: 90px;"></div>
+                <div style="width: 50%;">
+                    <div id="chart21" style="width: 100%;height: 80px;"></div>
+                    <div id="chart22" style="width: 100%;height: 90px;"></div>
                 </div>
-                <div id="chart23" style="width: 100px;height: 170px;"></div>
-                <div id="chart24" style="width: 100px;height: 170px;"></div>
+                <div style="width: 25%;">
+                    <div id="chart23" style="width: 100%;height: 170px;"></div>
+                </div>
+                <div style="width: 25%;">
+                    <div id="chart24" style="width: 100%;height: 170px;"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -726,7 +730,7 @@ export default {
 }
 
 .smooth-chart {
-    width: 190px;
+    width: 100%;
     height: 55px;
 }
 

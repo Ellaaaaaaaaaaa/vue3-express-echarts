@@ -284,7 +284,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .det-smo-chart {
-    width: 700px;
+    width: 100%;
     height: 300px;
 }
 

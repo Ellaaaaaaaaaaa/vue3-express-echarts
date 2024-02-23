@@ -1,6 +1,6 @@
 <template>
     <div class="outerbox">
-        <div id="chart8" class="pie-chart"></div>
+        <div id="chart8" class="bar-chart"></div>
     </div>
 </template>
 
@@ -101,8 +101,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.pie-chart {
-    width: 270px;
+.bar-chart {
+    width: 100%;
     height: 330px;
 }
 
