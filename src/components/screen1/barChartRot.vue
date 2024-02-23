@@ -69,7 +69,7 @@ export default {
                                 fontWeight: '400',
                                 color: 'rgb(230, 230, 230)'
                             },
-                            data: data.data.data.chartData.value,
+                            data: data.data.data.chartData.value1,
                         }
 
                     ],
