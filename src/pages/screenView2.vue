@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { inject } from "vue"
+import useTime from '@/hooks/useTime.js'
 import leftChart from "@/components/screen2/leftChart.vue"
 import bottomChart from "@/components/screen2/bottomChart.vue"
 import mapChart from "@/components/screen2/mapChart.vue"
@@ -57,42 +57,9 @@ export default {
         bottomChart,
         rightChart
     },
-    data() {
-        return {
-            time: "",
-        }
-    },
-    methods: {
-        currentTime() {
-            setInterval(this.formatDate, 500);
-        },
-        formatDate() {
-            let date = new Date();
-            let year = date.getFullYear(); // 年
-            let month = date.getMonth() + 1; // 月
-            let day = date.getDate(); // 日
-            let hour = date.getHours(); // 时
-            hour = hour < 10 ? "0" + hour : hour; // 如果只有一位，则前面补零
-            let minute = date.getMinutes(); // 分
-            minute = minute < 10 ? "0" + minute : minute; // 如果只有一位，则前面补零
-            let second = date.getSeconds(); // 秒
-            second = second < 10 ? "0" + second : second; // 如果只有一位，则前面补零
-            this.time = `${year}年${month}月${day}日 ${hour}:${minute}:${second}`;
-        }
-    },
-    mounted() {
-        this.currentTime();
-    },
-    beforeUnmount() {
-        if (this.formatDate) {
-            clearInterval(this.formatDate); // 在Vue实例销毁前，清除时间定时器
-        }
-    },
     setup() {
-        let $echarts = inject("echarts")
-        let $http = inject("axios")
-        console.log($echarts)
-        console.log($http)
+        var { time } = useTime()
+        return { time }
     }
 
 }
