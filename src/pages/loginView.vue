@@ -1,7 +1,7 @@
 <template>
     <div style="width: 100%;height: 100%;">
-        <div class="login-box" center>
-            <div>登录</div>
+        <div class="login-box">
+            <div style="margin-bottom: 30px;">登录</div>
             <el-form :model="loginData" :rules="rules" status-icon ref="loginRef" label-width="100px">
 
                 <el-form-item label="用户名" prop="username">
@@ -21,6 +21,7 @@
 <script>
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 export default {
@@ -36,10 +37,10 @@ export default {
             if (value === '') {
                 callBack(new Error("请输入用户名"));
             }
-            else if (value.trim().length >= 5) {
+            else if (value.trim().length >= 4) {
                 callBack()
             } else {
-                callBack(new Error('用户名至少五位'))
+                callBack(new Error('用户名至少四位'))
             }
         }
         const validatorPassword = (rule, value, callBack) => {
@@ -60,8 +61,9 @@ export default {
         }
 
         const router = useRouter()
+        const store = useStore()
         const submitForm = async () => {
-            console.log(loginRef.value)
+            //console.log(loginRef.value)
             loginRef.value.validate(valid => {
                 if (valid) {
                     // 收集用户名和密码，发送给后端
@@ -72,6 +74,7 @@ export default {
                                 message: '登陆成功',
                                 type: 'success',
                             });
+                            store.commit("NAMEUPDATE", loginData.username)
                             router.push({ name: 'homeView' })
                         } else {
                             ElMessage.error('用户名或密码错误!');
@@ -100,15 +103,17 @@ export default {
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 650px;
-    height: 320px;
+    width: 400px;
+    height: 250px;
+
     background: #fff;
     text-align: center;
-    padding: 40px 40px 12px 12px;
+    border: #E9EEF3 2px solid;
+    padding: 40px 12px 0px 12px;
 }
 
 .el-input {
-    width: 500px;
+    width: 250px;
     margin-bottom: 16px;
 }
 </style>

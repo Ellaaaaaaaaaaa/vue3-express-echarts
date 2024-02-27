@@ -3,6 +3,21 @@
         <el-container>
             <el-header>
                 <div class="title">可视化数据模板</div>
+
+                <el-dropdown @command="doCommand" trigger="click">
+                    <span class="el-dropdown-link"> {{ store.state.userName }}
+                        <el-icon class="el-icon--right">
+                            <arrow-down />
+                        </el-icon>
+                    </span>
+
+                    <template #dropdown>
+                        <el-dropdown-menu>
+                            <!--点击时触发doCommand方法并传入logout-->
+                            <el-dropdown-item command="logout">退出登录</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </template>
+                </el-dropdown>
             </el-header>
             <el-container style="height:1000px;">
                 <el-aside width="200px">Aside</el-aside>
@@ -30,7 +45,9 @@
 </template>
 
 <script>
-
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
+import { ArrowDown } from '@element-plus/icons-vue'
 export default {
     setup() {
         const getSrc = (index) => {
@@ -38,7 +55,16 @@ export default {
             var url = `./src/assets/bigscreen${index}.png`
             return url;
         };
-        return { getSrc }
+        const router = useRouter()
+        const store = useStore()
+        async function doCommand(e) {
+            if (e === "logout") {
+                localStorage.clear();
+                router.push({ name: 'loginView' })
+            }
+        }
+
+        return { getSrc, doCommand, store, ArrowDown }
     }
 
 
@@ -108,5 +134,13 @@ export default {
 
 .clearfix:after {
     clear: both
+}
+
+.el-dropdown-link {
+    cursor: pointer;
+    color: var(--el-color-primary);
+    display: flex;
+    align-items: center;
+    font-size: 18px;
 }
 </style>

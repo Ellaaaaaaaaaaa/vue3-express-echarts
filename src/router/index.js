@@ -31,5 +31,10 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
-
+router.beforeEach((to, from, next) => {
+  let username = localStorage.getItem("userName"); //这里根据自己项目的实际情况添加是否登录的判断条件
+  if (to.name !== "loginView" && !username)
+    next({ name: "loginView", query: { redirect: to.fullPath } });
+  else next();
+});
 export default router;
