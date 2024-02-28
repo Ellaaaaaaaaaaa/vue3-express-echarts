@@ -38,6 +38,7 @@ var textScrollDet = require("./router/textScrollDet.js");
 var text = require("./router/text.js");
 var radar = require("./router/radar.js");
 var login = require("./router/login.js");
+var register = require("./router/register.js");
 // 中间件中使用路由
 app.use("/smooth-chart", smoothChart);
 app.use("/detail-smo-chart", detailSmoChart);
@@ -48,5 +49,6 @@ app.use("/text-scroll-det", textScrollDet);
 app.use("/text", text);
 app.use("/radar", radar);
 app.use("/login", login);
+app.use("/register", register);
 // 请求是localhost:3000/user/路由文件中的地址
 app.listen(3000);

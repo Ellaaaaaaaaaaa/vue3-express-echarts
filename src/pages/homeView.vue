@@ -60,7 +60,7 @@ export default {
         async function doCommand(e) {
             if (e === "logout") {
                 localStorage.clear();
-                router.push({ name: 'loginView' })
+                router.replace({ name: 'loginView' })
             }
         }
 
