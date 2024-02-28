@@ -124,7 +124,6 @@ export default {
                 } else {
                     ElMessage.error('用户名或密码格式错误')
                     return false;
-
                 }
             })
         }
