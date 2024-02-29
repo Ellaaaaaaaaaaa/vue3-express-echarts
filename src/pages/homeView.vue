@@ -57,6 +57,7 @@ export default {
         };
         const router = useRouter()
         const store = useStore()
+
         async function doCommand(e) {
             if (e === "logout") {
                 localStorage.clear();
